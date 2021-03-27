@@ -1,14 +1,6 @@
-#[use_macro]
-extern crate lazy_static;
-
 use proc_macro2::TokenStream;
 use quote;
 use syn;
-
-
-pub struct ScheduleManager {
-    completed: bool,
-}
 
 pub fn scheduling(attr: TokenStream, item: TokenStream) -> TokenStream {
     let timer_interval: syn::LitInt = syn::parse2(attr.clone()).unwrap();
